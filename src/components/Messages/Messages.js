@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import { AuthUserContext } from '../Session';
-import { withFirebase } from '../Firebase';
+import { AuthUserContext } from '../../authentication/components/Session';
+import { withFirebase } from '../../authentication/Firebase';
 import MessageList from './MessageList';
 
 class Messages extends Component {

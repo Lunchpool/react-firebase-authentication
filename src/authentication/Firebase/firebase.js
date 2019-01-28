@@ -2,13 +2,20 @@ import app from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/database';
 
+const REACT_APP_API_KEY='AIzaSyB6gMkcBGF1avy29L__fqPOtIStDkSLpr0'
+const REACT_APP_AUTH_DOMAIN='basic-authentication-project.firebaseapp.com'
+const REACT_APP_DATABASE_URL='https://basic-authentication-project.firebaseio.com'
+const REACT_APP_PROJECT_ID='basic-authentication-project'
+const REACT_APP_STORAGE_BUCKET='basic-authentication-project.appspot.com'
+const REACT_APP_MESSAGING_SENDER_ID=145182842210
+
 const config = {
-  apiKey: process.env.REACT_APP_API_KEY,
-  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
-  databaseURL: process.env.REACT_APP_DATABASE_URL,
-  projectId: process.env.REACT_APP_PROJECT_ID,
-  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
-  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  apiKey: REACT_APP_API_KEY,
+  authDomain: REACT_APP_AUTH_DOMAIN,
+  databaseURL: REACT_APP_DATABASE_URL,
+  projectId: REACT_APP_PROJECT_ID,
+  storageBucket: REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: REACT_APP_MESSAGING_SENDER_ID
 };
 
 class Firebase {
@@ -55,7 +62,7 @@ class Firebase {
 
   doSendEmailVerification = () =>
     this.auth.currentUser.sendEmailVerification({
-      url: process.env.REACT_APP_CONFIRMATION_EMAIL_REDIRECT,
+      url: window.location.href
     });
 
   doPasswordUpdate = password =>
